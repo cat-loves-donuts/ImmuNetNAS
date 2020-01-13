@@ -26,7 +26,7 @@ class _Pooling_layer(nn.Sequential):
 "generate cell and define the foward function"
 class CNN_final_block(nn.Module):
     def __init__(self, layer_list, stage_num, structure, in_put, out_put):   #stage_num : 3
-        super(CNN_final_block, self).__init__()                                                           #structure : [0,1,1,0,1,0]
+        super(CNN_final_block, self).__init__()  
         self.stage_num = stage_num
         self.structure = structure
         self.in_put = in_put
@@ -67,7 +67,6 @@ class CNN_final_block(nn.Module):
                     if sample_structure[i][j] == 1:
                         middle_input = middle_input + out_layer[j]
             out_layer.append(self.block[i-1](middle_input))
-        #out = self.block[(self.stage_num+1)](out_layer[self.stage_num-1])
         out = out_layer[-1]
         return out
 
