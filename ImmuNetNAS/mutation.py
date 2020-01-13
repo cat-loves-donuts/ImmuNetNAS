@@ -51,15 +51,8 @@ def structure_mutate(structure, affinity, amount, population, index):
     if mutate_final_layer<1:
         mutate_final_layer = 1
 
-    # print(mutate_final_layer)
-    # print(mutate_rest_layer)
-    # print(mutate_layer_type)
-
     if index <= (amount * 0.2):
-        #print("only mutate final layer: ",mutate_final_layer)
         a = [i + 1 for i in range(0, len(structure[index][0]))]
-        # b = [i for i in range(0, len(structure[index][1][:-5]))]
-        #print("list a : ",a)
         for l in range(0,int(mutate_final_layer)):
             num = random.choice(a)
             if structure[index][1][-num] == 1:
@@ -69,7 +62,6 @@ def structure_mutate(structure, affinity, amount, population, index):
             a.remove(num)
 
     elif (amount * 0.2) < index <= (amount * 0.3):
-        #print('mutate  final and rest layer: ',mutate_final_layer,"and ",mutate_rest_layer)
         a = [i + 1 for i in range(0, len(structure[index][0]))]
         b = [i for i in range(0,len(structure[index][1][:-5]))]
         for m in range(0,int(mutate_final_layer)):
@@ -88,7 +80,6 @@ def structure_mutate(structure, affinity, amount, population, index):
             b.remove(num)
 
     else:
-        #print("mutate all layers:",mutate_final_layer,"and ", mutate_rest_layer,"and ",mutate_layer_type)
         q = 0
         a = [i + 1 for i in range(0, len(structure[index][0]))]
         b = [i for i in range(0, len(structure[index][1][:-5]))]
@@ -111,7 +102,6 @@ def structure_mutate(structure, affinity, amount, population, index):
             changed_type = random.choice([1,2,3,4,5,6,7])
             structure[index][0][num-1] = changed_type
             a.remove(num)
-    #print('mutate tesult: ',structure[index])
     return structure[index]
 
 
