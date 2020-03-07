@@ -7,10 +7,13 @@ and selection, and eliminates the self-generation individuals that do not meet t
 
 #### We used Google Cloud Platform to build the basic environment. The specific configuration and hardware selection are showing below:
 
-* Configuration requirements:
+* Configuration requirements(at least):
   * `python` 3.7.1
   * `torch` 1.1.0
   * `torchvision` 0.4.0
+  * `OS` Windows Server 2019 Datacenter-v20190709
+
+I can't guarantee that this code will work perfectly in other versions of the environment, because I have not test it in orther environments.
   
 * Hardware Selection:
   * `CPU` Intel(R) Xeon(R) CPU @ 2.30GHz
